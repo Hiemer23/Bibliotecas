@@ -1,4 +1,4 @@
-# 1 "LCD_16x2.c"
+# 1 "ADInput.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "LCD_16x2.c" 2
+# 1 "ADInput.c" 2
 # 1 "./main.h" 1
 # 13 "./main.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 1 3
@@ -9791,168 +9791,22 @@ int ADC_Read();
 
 int counter_display = 0;
 unsigned int contador=0;
-# 1 "LCD_16x2.c" 2
+# 1 "ADInput.c" 2
 
 
-void register_EN(void) {
-    (LATC5=1);
-    _delay((unsigned long)((1)*(16000000/4000000.0)));
-    (LATC5=0);
-    _delay((unsigned long)((40)*(16000000/4000000.0)));
-}
 
-void initialize_LCD(void) {
-    _delay((unsigned long)((16)*(16000000/4000.0)));
-    function_Set();
-    _delay((unsigned long)((5)*(16000000/4000.0)));
-    function_Set();
-    _delay((unsigned long)((100)*(16000000/4000.0)));
-    function_Set();
-    function_Set();
-    display_Off();
-    clear_Display();
-    entry_mode_Set();
-    display_On();
-}
 
-void function_Set(void) {
-    (LATC4=0);
-    (LATB7=0);
-    (LATB6=0);
-    (LATB5=1);
-    (LATB4=1);
-    (LATB3=1);
-    (LATB2=0);
-    (LATB1=0);
-    (LATB0=0);
-    register_EN();
-}
+int ADC_Read() {
+    int digital;
 
-void clear_Display(void) {
-    (LATC4=0);
-    (LATB7=0);
-    (LATB6=0);
-    (LATB5=0);
-    (LATB4=0);
-    (LATB3=0);
-    (LATB2=0);
-    (LATB1=0);
-    (LATB0=1);
-    register_EN();
-    _delay((unsigned long)((1500)*(16000000/4000000.0)));
-}
 
-void display_Off(void) {
-    (LATC4=0);
-    (LATB7=0);
-    (LATB6=0);
-    (LATB5=0);
-    (LATB4=0);
-    (LATB3=1);
-    (LATB2=0);
-    (LATB1=0);
-    (LATB0=0);
-    register_EN();
-}
 
-void display_On(void) {
-    (LATC4=0);
-    (LATB7=0);
-    (LATB6=0);
-    (LATB5=0);
-    (LATB4=0);
-    (LATB3=1);
-    (LATB2=1);
-    (LATB1=1);
-    (LATB0=1);
-    register_EN();
-}
 
-void entry_mode_Set(void) {
-    (LATC4=0);
-    (LATB7=0);
-    (LATB6=0);
-    (LATB5=0);
-    (LATB4=0);
-    (LATB3=0);
-    (LATB2=1);
-    (LATB1=1);
-    (LATB0=0);
-    register_EN();
-}
+    ADCON0bits.ADON=1;
+    ADCON0bits.GO=1;
 
-void Write_Display() {
+    while (ADCON0bits.GO == 1);
 
-    if (position_String < 16) {
-        Write_caracter(message[linha_LCD][position_String]);
-        position_String++;
-    } else {
-        position_String = 0;
-        (linha_LCD == 0) ? (linha_LCD = 1) : (linha_LCD = 0);
-        Set_Line(linha_LCD);
-    }
-
-}
-
-void Write_caracter(char c) {
-    ((c >> 7)&(0x01)) ? (LATB7=1) : (LATB7=0);
-    ((c >> 6)&(0x01)) ? (LATB6=1) : (LATB6=0);
-    ((c >> 5)&(0x01)) ? (LATB5=1) : (LATB5=0);
-    ((c >> 4)&(0x01)) ? (LATB4=1) : (LATB4=0);
-    ((c >> 3)&(0x01)) ? (LATB3=1) : (LATB3=0);
-    ((c >> 2)&(0x01)) ? (LATB2=1) : (LATB2=0);
-    ((c >> 1)&(0x01)) ? (LATB1=1) : (LATB1=0);
-    ((c >> 0)&(0x01)) ? (LATB0=1) : (LATB0=0);
-    registra_RS();
-}
-
-void registra_RS(void) {
-    (LATC4=1);
-    _delay((unsigned long)((1)*(16000000/4000000.0)));
-    (LATC5=1);
-    _delay((unsigned long)((1)*(16000000/4000000.0)));
-    (LATC5=0);
-    _delay((unsigned long)((1)*(16000000/4000000.0)));
-    (LATC4=0);
-}
-
-void Set_Line(char line) {
-    if (line == 0) {
-        (LATC4=0);
-        (LATB7=1);
-        (LATB6=0);
-        (LATB5=0);
-        (LATB4=0);
-        (LATB3=0);
-        (LATB2=0);
-        (LATB1=0);
-        (LATB0=0);
-        register_EN();
-        return;
-    }
-    (LATC4=0);
-    (LATB7=1);
-    (LATB6=1);
-    (LATB5=0);
-    (LATB4=0);
-    (LATB3=0);
-    (LATB2=0);
-    (LATB1=0);
-    (LATB0=0);
-    register_EN();
-}
-
-void change_Message(char line, char *new_Text) {
-    int i = 0;
-
-    while (new_Text[i] != '\0' && i < 16) {
-
-        if (message[line][i] != new_Text[i]) {
-                message[line][i] = new_Text[i];
-            }
-        i++;
-    }
-    for (i = i; i < 16; i++) {
-        message[line][i] = ' ';
-    }
+    digital = (ADRESH * 256) | (ADRESL);
+    return (digital);
 }

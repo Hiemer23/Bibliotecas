@@ -81,6 +81,7 @@
 #define _XTAL_FREQ 16000000
 #include "LCD_16x2.h"
 //#include "FunctionStrings.h"
+#include "ADInput.h"
 
 int counter_display = 0;
 unsigned int contador=0;

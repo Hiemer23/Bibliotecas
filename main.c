@@ -7,13 +7,6 @@
 
 #include "main.h"
 
-//void pisca() {
-//    if (counter == 100) {
-//        LATB = ~LATB;
-//        counter = 0;
-//    }
-//}
-
 void __interrupt() interruptsManager(void) {
 
     if (INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
@@ -43,6 +36,7 @@ void main(void) {
     //'0' para output e '1' para input
     TRISB = 0x00;
     TRISC = 0x00;
+    TRISA = 0x01; //Analog input
     //inicia a saída com tudo zero
     LATB = 0x00;
     LATC = 0x00;
@@ -51,18 +45,28 @@ void main(void) {
     Init_Timers();
     //Inicializa o timer0
     TMR0 = 6;
+
+    //AnalogRegisters configuration
+    ADCON0 = 0b00000001;
+    ADCON1 = 0b00000;
+    ADCON2 = 0b10011101;
+
     //Inicializa o display
-    //PonteiroDeFuncao = initialize_LCD;
     initialize_LCD();
     char timer[17];
     sprintf(timer, "Tempo: %d", contador);
     change_Message(0, timer);
+    int ad;
     while (1) {
         if (counter_display >= 5) {
             Write_Display();
             counter_display = 0;
+            //teste
+            ad = ADC_Read();
             *timer = '\0';
             sprintf(timer, "Tempo: %d", contador);
+            change_Message(1, timer);
+            sprintf(timer, "AD: %d", ad);
             change_Message(0, timer);
         }
     }

@@ -9790,11 +9790,17 @@ void change_Message(char line, char *new_Text);
 # 82 "./main.h" 2
 
 
+# 1 "./ADInput.h" 1
+# 19 "./ADInput.h"
+int ADC_Read();
+# 84 "./main.h" 2
+
 
 int counter_display = 0;
 unsigned int contador=0;
 # 8 "main.c" 2
-# 17 "main.c"
+
+
 void __attribute__((picinterrupt(("")))) interruptsManager(void) {
 
     if (INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
@@ -9824,6 +9830,7 @@ void main(void) {
 
     TRISB = 0x00;
     TRISC = 0x00;
+    TRISA = 0x01;
 
     LATB = 0x00;
     LATC = 0x00;
@@ -9834,16 +9841,26 @@ void main(void) {
     TMR0 = 6;
 
 
+    ADCON0 = 0b00000001;
+    ADCON1 = 0b00000;
+    ADCON2 = 0b10011101;
+
+
     initialize_LCD();
     char timer[17];
     sprintf(timer, "Tempo: %d", contador);
     change_Message(0, timer);
+    int ad;
     while (1) {
         if (counter_display >= 5) {
             Write_Display();
             counter_display = 0;
+
+            ad = ADC_Read();
             *timer = '\0';
             sprintf(timer, "Tempo: %d", contador);
+            change_Message(1, timer);
+            sprintf(timer, "AD: %d", ad);
             change_Message(0, timer);
         }
     }

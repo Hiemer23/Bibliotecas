@@ -956,14 +956,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _linha_LCD
 -> -> 0 `i `uc
 ]
-"85 ./main.h
-[; ;./main.h: 85: int counter_display = 0;
+"86 ./main.h
+[; ;./main.h: 86: int counter_display = 0;
 [v _counter_display `i ~T0 @X0 1 e ]
 [i _counter_display
 -> 0 `i
 ]
-"86
-[; ;./main.h: 86: unsigned int contador=0;
+"87
+[; ;./main.h: 87: unsigned int contador=0;
 [v _contador `ui ~T0 @X0 1 e ]
 [i _contador
 -> -> 0 `i `ui

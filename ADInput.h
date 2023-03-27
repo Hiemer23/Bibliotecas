@@ -8,16 +8,15 @@
 #ifndef ADINPUT_H
 #define	ADINPUT_H
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
+#define Leitura_ON ADCON0bits.ADON=1
+#define Leitura_OFF ADCON0bits.ADON=1
+#define Convertion_ON ADCON0bits.GO=1   
+#define Convertion_OFF ADCON0bits.GO=0
+#define GO_BIT ADCON0bits.GO
 
+//Prototypes
 
-
-
-#ifdef	__cplusplus
-}
-#endif
+int ADC_Read();
 
 #endif	/* ADINPUT_H */
 

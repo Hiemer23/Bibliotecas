@@ -3,6 +3,8 @@
 [d edition pro ]
 [d chip 18F46K22 ]
 [d frameptr 4065 ]
+"5 C:\Users\andrey.hiemer\MPLABXProjects\Inicializar LCD-2.X\ADInput.c
+[v _ADC_Read ADC_Read `(i  1 e 2 0 ]
 "1 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
 "9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aodiv.c
@@ -75,11 +77,11 @@
 [v _Set_Line Set_Line `(v  1 e 1 0 ]
 "151
 [v _change_Message change_Message `(v  1 e 1 0 ]
-"17 C:\Users\andrey.hiemer\MPLABXProjects\Inicializar LCD-2.X\main.c
+"10 C:\Users\andrey.hiemer\MPLABXProjects\Inicializar LCD-2.X\main.c
 [v _interruptsManager interruptsManager `IIH(v  1 e 1 0 ]
-"28
+"21
 [v _Init_Timers Init_Timers `(v  1 e 1 0 ]
-"41
+"34
 [v _main main `(v  1 e 1 0 ]
 "37 C:\Users\andrey.hiemer\MPLABXProjects\Inicializar LCD-2.X/LCD_16x2.h
 [v _message message `[2][17]uc  1 e 34 0 ]
@@ -87,18 +89,63 @@
 [v _position_String position_String `ui  1 e 2 0 ]
 "39
 [v _linha_LCD linha_LCD `uc  1 e 1 0 ]
-"85 C:\Users\andrey.hiemer\MPLABXProjects\Inicializar LCD-2.X/main.h
+"86 C:\Users\andrey.hiemer\MPLABXProjects\Inicializar LCD-2.X/main.h
 [v _counter_display counter_display `i  1 e 2 0 ]
-"86
+"87
 [v _contador contador `ui  1 e 2 0 ]
 "7672 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
 "7784
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
+"8060
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "8282
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "8504
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"13472
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+"13543
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"13611
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+[s S218 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"13656
+[s S221 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+[s S225 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+[s S233 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+]
+[s S236 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S239 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S242 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[s S245 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S248 . 1 `S218 1 . 1 0 `S221 1 . 1 0 `S225 1 . 1 0 `S233 1 . 1 0 `S236 1 . 1 0 `S239 1 . 1 0 `S242 1 . 1 0 `S245 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES248  1 e 1 @4034 ]
+"13743
+[v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
+"13763
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
 "16046
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 "16129
@@ -164,19 +211,21 @@
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"41 C:\Users\andrey.hiemer\MPLABXProjects\Inicializar LCD-2.X\main.c
+"34 C:\Users\andrey.hiemer\MPLABXProjects\Inicializar LCD-2.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"57
+"56
 [v main@timer timer `[17]uc  1 a 17 8 ]
-"69
+"59
+[v main@ad ad `i  1 a 2 25 ]
+"73
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[s S645 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[s S746 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S645  1 a 6 2 ]
+[v sprintf@f f `S746  1 a 6 2 ]
 "12
 [v sprintf@ap ap `[1]*.39v  1 a 2 0 ]
 "9
@@ -189,9 +238,9 @@
 {
 "1393
 [v vfprintf@cfmt cfmt `*.32uc  1 a 2 85 ]
-[s S671 _IO_FILE 0 ]
+[s S772 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.39S671  1 p 2 79 ]
+[v vfprintf@fp fp `*.39S772  1 p 2 79 ]
 [v vfprintf@fmt fmt `*.32Cuc  1 p 2 81 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 83 ]
 "1404
@@ -201,9 +250,9 @@
 {
 "696
 [v vfpfcnvrt@ll ll `o  1 a 8 71 ]
-[s S671 _IO_FILE 0 ]
+[s S772 _IO_FILE 0 ]
 "692
-[v vfpfcnvrt@fp fp `*.39S671  1 p 2 63 ]
+[v vfpfcnvrt@fp fp `*.39S772  1 p 2 63 ]
 [v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 65 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 67 ]
 "1387
@@ -218,9 +267,9 @@
 [v dtoa@s s `i  1 a 2 51 ]
 [v dtoa@w w `i  1 a 2 49 ]
 [v dtoa@p p `i  1 a 2 47 ]
-[s S671 _IO_FILE 0 ]
+[s S772 _IO_FILE 0 ]
 "287
-[v dtoa@fp fp `*.39S671  1 p 2 27 ]
+[v dtoa@fp fp `*.39S772  1 p 2 27 ]
 [v dtoa@d d `o  1 p 8 29 ]
 "328
 } 0
@@ -230,9 +279,9 @@
 "74
 [v pad@w w `i  1 a 2 25 ]
 [v pad@i i `i  1 a 2 23 ]
-[s S671 _IO_FILE 0 ]
+[s S772 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.39S671  1 p 2 16 ]
+[v pad@fp fp `*.39S772  1 p 2 16 ]
 [v pad@buf buf `*.39uc  1 p 2 18 ]
 [v pad@p p `i  1 p 2 20 ]
 "95
@@ -255,16 +304,16 @@
 [v fputs@c c `uc  1 a 1 13 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 9 ]
-[s S645 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.39S645  1 p 2 11 ]
+[s S746 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S746  1 p 2 11 ]
 "19
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[s S645 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.39S645  1 p 2 2 ]
+[s S746 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S746  1 p 2 2 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
@@ -375,13 +424,20 @@
 {
 "8
 } 0
-"28 C:\Users\andrey.hiemer\MPLABXProjects\Inicializar LCD-2.X\main.c
+"21 C:\Users\andrey.hiemer\MPLABXProjects\Inicializar LCD-2.X\main.c
 [v _Init_Timers Init_Timers `(v  1 e 1 0 ]
 {
-"39
+"32
 } 0
-"17
+"5 C:\Users\andrey.hiemer\MPLABXProjects\Inicializar LCD-2.X\ADInput.c
+[v _ADC_Read ADC_Read `(i  1 e 2 0 ]
+{
+"6
+[v ADC_Read@digital digital `i  1 a 2 4 ]
+"18
+} 0
+"10 C:\Users\andrey.hiemer\MPLABXProjects\Inicializar LCD-2.X\main.c
 [v _interruptsManager interruptsManager `IIH(v  1 e 1 0 ]
 {
-"26
+"19
 } 0

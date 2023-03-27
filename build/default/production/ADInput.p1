@@ -1,82 +1,49 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"16932 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 16932:     struct {
-[s S826 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S826 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"16942
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 16942:     struct {
-[s S827 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S827 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"16952
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 16952:     struct {
-[s S828 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S828 . . GIEL GIEH ]
-"16931
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 16931: typedef union {
-[u S825 `S826 1 `S827 1 `S828 1 ]
-[n S825 . . . . ]
-"16958
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 16958: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS825 ~T0 @X0 0 e@4082 ]
-"16199
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 16199: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
-[v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
-"16129
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 16129: extern volatile unsigned char T0CON __attribute__((address(0xFD5)));
-[v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
-"20285
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 20285: extern volatile __bit TMR0IE __attribute__((address(0x7F95)));
-[v _TMR0IE `Vb ~T0 @X0 0 e@32661 ]
-"19352
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 19352: extern volatile __bit PEIE __attribute__((address(0x7F96)));
-[v _PEIE `Vb ~T0 @X0 0 e@32662 ]
-"18491
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 18491: extern volatile __bit GIE __attribute__((address(0x7F97)));
-[v _GIE `Vb ~T0 @X0 0 e@32663 ]
-[p mainexit ]
-"8282
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 8282: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
-[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"8504
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 8504: extern volatile unsigned char TRISC __attribute__((address(0xF94)));
-[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
-"8060
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 8060: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
-[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"7672
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 7672: extern volatile unsigned char LATB __attribute__((address(0xF8A)));
-[v _LATB `Vuc ~T0 @X0 0 e@3978 ]
-"7784
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 7784: extern volatile unsigned char LATC __attribute__((address(0xF8B)));
-[v _LATC `Vuc ~T0 @X0 0 e@3979 ]
-"16046
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 16046: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
-[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
-"13611
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13611: extern volatile unsigned char ADCON0 __attribute__((address(0xFC2)));
-[v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
-"13543
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13543: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
-[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
-"13472
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13472: extern volatile unsigned char ADCON2 __attribute__((address(0xFC0)));
-[v _ADCON2 `Vuc ~T0 @X0 0 e@4032 ]
-"44 ./LCD_16x2.h
-[; ;./LCD_16x2.h: 44: void initialize_LCD(void);
-[v _initialize_LCD `(v ~T0 @X0 0 ef ]
-"113 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"54 ./LCD_16x2.h
-[; ;./LCD_16x2.h: 54: void change_Message(char line, char *new_Text);
-[v _change_Message `(v ~T0 @X0 0 ef2`uc`*uc ]
-"50
-[; ;./LCD_16x2.h: 50: void Write_Display(void);
-[v _Write_Display `(v ~T0 @X0 0 ef ]
-"19 ./ADInput.h
-[; ;./ADInput.h: 19: int ADC_Read();
-[v _ADC_Read `(i ~T0 @X0 0 e? ]
+"13617 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13617:     struct {
+[s S648 :1 `uc 1 :1 `uc 1 ]
+[n S648 . . GO_NOT_DONE ]
+"13621
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13621:     struct {
+[s S649 :1 `uc 1 :1 `uc 1 :5 `uc 1 ]
+[n S649 . ADON GO_nDONE CHS ]
+"13626
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13626:     struct {
+[s S650 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S650 . . GO CHS0 CHS1 CHS2 CHS3 CHS4 ]
+"13635
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13635:     struct {
+[s S651 :1 `uc 1 :1 `uc 1 ]
+[n S651 . . DONE ]
+"13639
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13639:     struct {
+[s S652 :1 `uc 1 :1 `uc 1 ]
+[n S652 . . NOT_DONE ]
+"13643
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13643:     struct {
+[s S653 :1 `uc 1 :1 `uc 1 ]
+[n S653 . . nDONE ]
+"13647
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13647:     struct {
+[s S654 :1 `uc 1 :1 `uc 1 ]
+[n S654 . . GO_DONE ]
+"13651
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13651:     struct {
+[s S655 :1 `uc 1 :1 `uc 1 ]
+[n S655 . . GODONE ]
+"13616
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13616: typedef union {
+[u S647 `S648 1 `S649 1 `S650 1 `S651 1 `S652 1 `S653 1 `S654 1 `S655 1 ]
+[n S647 . . . . . . . . . ]
+"13656
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13656: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xFC2)));
+[v _ADCON0bits `VS647 ~T0 @X0 0 e@4034 ]
+"13763
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13763: extern volatile unsigned char ADRESH __attribute__((address(0xFC4)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
+"13743
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 13743: extern volatile unsigned char ADRESL __attribute__((address(0xFC3)));
+[v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -988,161 +955,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _contador
 -> -> 0 `i `ui
 ]
-[v $root$_interruptsManager `(v ~T0 @X0 0 e ]
-"10 main.c
-[; ;main.c: 10: void __attribute__((picinterrupt(("")))) interruptsManager(void) {
-[v _interruptsManager `(v ~T1 @X0 1 ef ]
+"5 ADInput.c
+[; ;ADInput.c: 5: int ADC_Read() {
+[v _ADC_Read `(i ~T0 @X0 1 ef ]
 {
-[e :U _interruptsManager ]
+[e :U _ADC_Read ]
 [f ]
+"6
+[; ;ADInput.c: 6:     int digital;
+[v _digital `i ~T0 @X0 1 a ]
+"11
+[; ;ADInput.c: 11:     ADCON0bits.ADON=1;
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
 "12
-[; ;main.c: 12:     if (INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
-[e $ ! && != -> . . _INTCONbits 0 5 `i -> 0 `i != -> . . _INTCONbits 0 2 `i -> 0 `i 857  ]
-{
-"13
-[; ;main.c: 13:         TMR0 = 6;
-[e = _TMR0 -> -> 6 `i `us ]
+[; ;ADInput.c: 12:     ADCON0bits.GO=1;
+[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
 "14
-[; ;main.c: 14:         INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"15
-[; ;main.c: 15:         counter_display++;
-[e ++ _counter_display -> 1 `i ]
-"16
-[; ;main.c: 16:         contador++;
-[e ++ _contador -> -> 1 `i `ui ]
-"17
-[; ;main.c: 17:     }
-}
+[; ;ADInput.c: 14:     while (ADCON0bits.GO == 1);
+[e $U 857  ]
+[e :U 858 ]
 [e :U 857 ]
-"19
-[; ;main.c: 19: }
+[e $ == -> . . _ADCON0bits 2 1 `i -> 1 `i 858  ]
+[e :U 859 ]
+"16
+[; ;ADInput.c: 16:     digital = (ADRESH * 256) | (ADRESL);
+[e = _digital | * -> _ADRESH `i -> 256 `i -> _ADRESL `i ]
+"17
+[; ;ADInput.c: 17:     return (digital);
+[e ) _digital ]
+[e $UE 856  ]
+"18
+[; ;ADInput.c: 18: }
 [e :UE 856 ]
 }
-"21
-[; ;main.c: 21: void Init_Timers(void) {
-[v _Init_Timers `(v ~T0 @X0 1 ef ]
-{
-[e :U _Init_Timers ]
-[f ]
-"25
-[; ;main.c: 25:     T0CON = 0b11000011;
-[e = _T0CON -> -> 195 `i `uc ]
-"26
-[; ;main.c: 26:     TMR0IE = 1;
-[e = _TMR0IE -> -> 1 `i `b ]
-"28
-[; ;main.c: 28:     PEIE = 1;
-[e = _PEIE -> -> 1 `i `b ]
-"30
-[; ;main.c: 30:     GIE = 1;
-[e = _GIE -> -> 1 `i `b ]
-"32
-[; ;main.c: 32: }
-[e :UE 858 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"34
-[; ;main.c: 34: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
-"37
-[; ;main.c: 37:     TRISB = 0x00;
-[e = _TRISB -> -> 0 `i `uc ]
-"38
-[; ;main.c: 38:     TRISC = 0x00;
-[e = _TRISC -> -> 0 `i `uc ]
-"39
-[; ;main.c: 39:     TRISA = 0x01;
-[e = _TRISA -> -> 1 `i `uc ]
-"41
-[; ;main.c: 41:     LATB = 0x00;
-[e = _LATB -> -> 0 `i `uc ]
-"42
-[; ;main.c: 42:     LATC = 0x00;
-[e = _LATC -> -> 0 `i `uc ]
-"44
-[; ;main.c: 44:     OSCCON = 0b11111100;
-[e = _OSCCON -> -> 252 `i `uc ]
-"45
-[; ;main.c: 45:     Init_Timers();
-[e ( _Init_Timers ..  ]
-"47
-[; ;main.c: 47:     TMR0 = 6;
-[e = _TMR0 -> -> 6 `i `us ]
-"50
-[; ;main.c: 50:     ADCON0 = 0b00000001;
-[e = _ADCON0 -> -> 1 `i `uc ]
-"51
-[; ;main.c: 51:     ADCON1 = 0b00000;
-[e = _ADCON1 -> -> 0 `i `uc ]
-"52
-[; ;main.c: 52:     ADCON2 = 0b10011101;
-[e = _ADCON2 -> -> 157 `i `uc ]
-"55
-[; ;main.c: 55:     initialize_LCD();
-[e ( _initialize_LCD ..  ]
-"56
-[; ;main.c: 56:     char timer[17];
-[v _timer `uc ~T0 @X0 -> 17 `i a ]
-"57
-[; ;main.c: 57:     sprintf(timer, "Tempo: %d", contador);
-[e ( _sprintf (1 , (. , &U _timer :s 1C _contador ]
-"58
-[; ;main.c: 58:     change_Message(0, timer);
-[e ( _change_Message (2 , -> -> 0 `i `uc &U _timer ]
-"59
-[; ;main.c: 59:     int ad;
-[v _ad `i ~T0 @X0 1 a ]
-"60
-[; ;main.c: 60:     while (1) {
-[e :U 861 ]
-{
-"61
-[; ;main.c: 61:         if (counter_display >= 5) {
-[e $ ! >= _counter_display -> 5 `i 863  ]
-{
-"62
-[; ;main.c: 62:             Write_Display();
-[e ( _Write_Display ..  ]
-"63
-[; ;main.c: 63:             counter_display = 0;
-[e = _counter_display -> 0 `i ]
-"65
-[; ;main.c: 65:             ad = ADC_Read();
-[e = _ad ( _ADC_Read ..  ]
-"66
-[; ;main.c: 66:             *timer = '\0';
-[e = *U &U _timer -> -> 0 `ui `uc ]
-"67
-[; ;main.c: 67:             sprintf(timer, "Tempo: %d", contador);
-[e ( _sprintf (1 , (. , &U _timer :s 2C _contador ]
-"68
-[; ;main.c: 68:             change_Message(1, timer);
-[e ( _change_Message (2 , -> -> 1 `i `uc &U _timer ]
-"69
-[; ;main.c: 69:             sprintf(timer, "AD: %d", ad);
-[e ( _sprintf (1 , (. , &U _timer :s 3C _ad ]
-"70
-[; ;main.c: 70:             change_Message(0, timer);
-[e ( _change_Message (2 , -> -> 0 `i `uc &U _timer ]
-"71
-[; ;main.c: 71:         }
-}
-[e :U 863 ]
-"72
-[; ;main.c: 72:     }
-}
-[e :U 860 ]
-[e $U 861  ]
-[e :U 862 ]
-"73
-[; ;main.c: 73: }
-[e :UE 859 ]
-}
-[p f _sprintf 8388736 ]
-[a 1C 84 101 109 112 111 58 32 37 100 0 ]
-[a 2C 84 101 109 112 111 58 32 37 100 0 ]
-[a 3C 65 68 58 32 37 100 0 ]
