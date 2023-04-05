@@ -31,26 +31,11 @@
 #define DB7_HIGH (LATB7=1)
 #define DB7_LOW  (LATB7=0)
 
-//Variaveis globais
-//void (*PonteiroDeFuncao)(void);
-unsigned int status_LCD_startup = 1;
-char message[2][17] = {"Bem Vindo 57 123", "LCD ao Vindo Bem"};
-unsigned int position_String = 0;
-char linha_LCD = 0;
-
 //Prototypes:
-void LCD_Manager();
-void register_EN(void);
-void initialize_LCD(void);
-void function_Set(void);
-void display_Off(void);
-void clear_Display(void);
-void entry_mode_Set(void);
-void display_On(void);
+
 void Write_Display(void);
-void Write_caracter(char c);
-void Set_Line(char line);
-void registra_RS(void);
+void initialize_LCD(void);
 void change_Message(char line, char *new_Text);
+
 #endif	/* LCD_16X2_H */
 

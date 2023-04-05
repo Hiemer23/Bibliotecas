@@ -17,6 +17,8 @@
 //Prototypes
 
 int ADC_Read();
+int getMedia(void);
+void TaskAD(void) ;
 
 #endif	/* ADINPUT_H */
 

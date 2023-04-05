@@ -7,27 +7,58 @@
 
 #include "main.h"
 
+//Variaveis globais
+int counter_5ms = 0;
+int counter_50ms = 0;
+int ad = 0;
+unsigned int contador = 0;
+char timer[17];
+
 void __interrupt() interruptsManager(void) {
 
     if (INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
         TMR0 = 6;
         INTCONbits.TMR0IF = 0;
-        counter_display++;
+        counter_5ms++;
+        counter_50ms++;
         contador++;
     }
 
 }
 
 void Init_Timers(void) {
+    //Indica a frequência de trabalho
+    OSCCON = 0b11111100; //16MHz
+    OSCTUNEbits.PLLEN = 1; //define para 64MHz
     //--------------------------------------------------------------------------
     // Timer0 operando como base de tempo para o sistema
     //--------------------------------------------------------------------------
-    T0CON = 0b11000011; // Timer 0 funcionando pelo oscilador com Prescaler 1:16
+    T0CON = 0b11000101; // Timer 0 funcionando pelo oscilador com Prescaler 1:64
     TMR0IE = 1;
 
     PEIE = 1;
 
     GIE = 1;
+
+}
+
+inline void pinInverte(void) {
+
+    LATC0 = ~LATC0;
+
+}
+
+void tempo5_ms(void) {
+
+    counter_5ms = 0;
+    Write_Display();
+    pinInverte();
+    ad = getMedia();
+    *timer = '\0';
+    sprintf(timer, "Tempo: %d", contador);
+    change_Message(1, timer);
+    sprintf(timer, "AD: %d", ad);
+    change_Message(0, timer);
 
 }
 
@@ -40,8 +71,6 @@ void main(void) {
     //inicia a saída com tudo zero
     LATB = 0x00;
     LATC = 0x00;
-    //Indica a frequência de trabalho
-    OSCCON = 0b11111100; //16MHz
     Init_Timers();
     //Inicializa o timer0
     TMR0 = 6;
@@ -53,21 +82,13 @@ void main(void) {
 
     //Inicializa o display
     initialize_LCD();
-    char timer[17];
+
     sprintf(timer, "Tempo: %d", contador);
     change_Message(0, timer);
-    int ad;
     while (1) {
-        if (counter_display >= 5) {
-            Write_Display();
-            counter_display = 0;
-            //teste
-            ad = ADC_Read();
-            *timer = '\0';
-            sprintf(timer, "Tempo: %d", contador);
-            change_Message(1, timer);
-            sprintf(timer, "AD: %d", ad);
-            change_Message(0, timer);
+        TaskAD();
+        if (counter_5ms >= 5) {
+            tempo5_ms();
         }
     }
 }
